@@ -1,4 +1,4 @@
-FROM golang:1.13.4-alpine3.7
+FROM golang:1.13.4-alpine3.10
 
 COPY . /go/src/ecovacs.com/corpus_platform
 
