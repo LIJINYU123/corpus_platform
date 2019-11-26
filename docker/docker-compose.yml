@@ -15,3 +15,5 @@ services:
       - sh
       - -c
       - go run server.go
+    volumes:
+      - /etc/localtime:/etc/localtime
