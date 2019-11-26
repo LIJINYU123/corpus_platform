@@ -7,8 +7,6 @@ COPY . .
 
 RUN go mod download
 
-RUN cd /go/src/ecovacs.com/corpus_platform && go-wrapper download && go-wrapper install
-
 RUN apk add --no-cache tzdata
 
 WORKDIR /go/src/ecovacs.com/corpus_platform/docker
