@@ -9,7 +9,7 @@ WORKDIR /go/src/ecovacs.com/corpus_platform
 
 RUN go mod download
 
-RUN go build -o corpus_platform corpus_platform
+RUN go build -o corpus_platform
 
 RUN apk add --no-cache tzdata
 
