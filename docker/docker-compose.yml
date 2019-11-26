@@ -11,9 +11,5 @@ services:
         max-size: "5M"
         max-file: "10"
       driver: json-file
-    entrypoint:
-      - sh
-      - -c
-      - go run server.go
     volumes:
       - /etc/localtime:/etc/localtime
