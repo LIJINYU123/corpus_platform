@@ -12,6 +12,6 @@ services:
         max-file: "10"
       driver: json-file
     entrypoint:
-      - bash
+      - sh
       - -c
       - go run server.go
