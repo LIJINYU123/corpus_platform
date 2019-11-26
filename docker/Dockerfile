@@ -4,6 +4,8 @@ ENV GOPROXY "https://goproxy.io"
 
 COPY . /go/src/ecovacs.com/corpus_platform
 
+WORKDIR /go/src/ecovacs.com/corpus_platform
+
 RUN go mod download
 
 RUN apk add --no-cache tzdata
