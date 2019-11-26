@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   corpus-platform:
-    image: docker-reg.ecovacs.com/library/corpus-platform:20191126-047bd41
+    image: docker-reg.ecovacs.com/library/corpus-platform:20191126-cb13fe8
     container_name: corpus-platform
     ports:
       - "8080:8080"
