@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func init()  {
+func init() {
 	utils.LogInit(os.Stderr, os.Stdout, os.Stdout, os.Stderr)
 	if len(os.Args) > 1 {
 		err := utils.LoadConfigFromFile(os.Args[1])
@@ -19,7 +19,7 @@ func init()  {
 	}
 }
 
-func setRoute(app *iris.Application)  {
+func setRoute(app *iris.Application) {
 	modules := []interface{}{
 		Login.ModuleInfo,
 	}
@@ -27,7 +27,7 @@ func setRoute(app *iris.Application)  {
 	for _, module := range modules {
 		info := module.(utils.ModuleInfo)
 		for _, entrypoint := range info.EntryPoints {
-			entryPath := fmt.Sprintf("/api/%s/%s", info.ModuleName, entrypoint.EntryPath)
+			entryPath := fmt.Sprintf("/api/%s", entrypoint.EntryPath)
 			if app.Handle(entrypoint.AllowMethod, entryPath, entrypoint.Callback) == nil {
 				utils.LogInfo.Printf("Add route for %s (%s) fail", entryPath, entrypoint.AllowMethod)
 			} else {
@@ -42,11 +42,9 @@ func main() {
 
 	setRoute(app)
 
-	if ok, port:= utils.GetEnv("SERVER_PORT"); ok {
+	if ok, port := utils.GetEnv("SERVER_PORT"); ok {
 		_ = app.Run(iris.Addr(":" + port))
 	} else {
 		_ = app.Run(iris.Addr(":8080"))
 	}
 }
-
-
