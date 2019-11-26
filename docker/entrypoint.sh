@@ -5,5 +5,5 @@ do
   eval echo $line >> dev.env
 done < $1
 
-./corpus-platform dev.env
+./corpus_platform dev.env
 
