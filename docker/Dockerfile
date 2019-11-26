@@ -1,9 +1,8 @@
 FROM golang:1.13.4-alpine3.10
 
 ENV GOPROXY "https://goproxy.io"
-WORKDIR /go/src/ecovacs.com
 
-COPY . .
+COPY . /go/src/ecovacs.com/corpus_platform
 
 RUN go mod download
 
