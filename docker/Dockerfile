@@ -10,13 +10,10 @@ WORKDIR /go/src/ecovacs.com/corpus_platform
 
 RUN go mod download
 
-RUN apk add tzdata
-
-RUN cd .. && go install -x corpus_platform
+RUN apk add --no-cache tzdata
 
 WORKDIR /usr/local/bin
 
-COPY /go/bin/corpus_platform corpus_platform
 COPY /go/src/ecovacs.com/corpus_platform/docker/entrypoint.sh entrypoint.sh
 COPY /go/src/ecovacs.com/corpus_platform/docker/env.template env.template
 
