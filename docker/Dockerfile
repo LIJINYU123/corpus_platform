@@ -8,13 +8,15 @@ COPY . /go/src/ecovacs.com/corpus_platform
 
 WORKDIR /go/src/ecovacs.com/corpus_platform
 
+COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY docker/env.template /usr/local/bin/env.template
+
 RUN go mod download
 
 RUN apk add --no-cache tzdata
 
-WORKDIR /usr/local/bin
 
-COPY /go/src/ecovacs.com/corpus_platform/docker/entrypoint.sh entrypoint.sh
-COPY /go/src/ecovacs.com/corpus_platform/docker/env.template env.template
+
+WORKDIR /usr/local/bin
 
 CMD ["./entrypoint.sh", "env.template"]
