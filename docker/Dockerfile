@@ -10,4 +10,6 @@ RUN go mod download
 
 RUN apk add --no-cache tzdata
 
+RUN chmod +x /go/src/ecovacs.com/corpus_platform/docker/entrypoint.sh
+
 ENTRYPOINT ["/go/src/ecovacs.com/corpus_platform/docker/entrypoint.sh"]
