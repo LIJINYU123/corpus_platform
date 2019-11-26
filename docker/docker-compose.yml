@@ -4,7 +4,7 @@ services:
     image: docker-reg.ecovacs.com/library/corpus-platform:20191126-cb13fe8
     container_name: corpus-platform
     ports:
-      - "8080:8080"
+      - "8080:8090"
     restart: always
     logging:
       options:
@@ -12,7 +12,7 @@ services:
         max-file: "10"
       driver: json-file
     environment:
-      - SERVER_PORT=8080
+      - SERVER_PORT=8090
       - MONGO_HOST=10.89.100.14
       - MONGO_PORT=27017
       - MONGO_DBNAME=corpus
