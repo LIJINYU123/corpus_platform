@@ -5,5 +5,5 @@ do
   eval echo $line >> dev.env
 done < $1
 
-./corpus_platform dev.env
+go run server.go dev.env
 
