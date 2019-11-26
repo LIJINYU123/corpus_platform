@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd .. && go run server.go
+go run server.go
 
