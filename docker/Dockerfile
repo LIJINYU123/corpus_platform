@@ -14,7 +14,7 @@ RUN go build
 
 WORKDIR /usr/local/bin
 
-COPY /go/src/ecovacs.com/corpus_platform/corpus-platform corpus-platform
+COPY /go/src/ecovacs.com/corpus_platform/corpus_platform corpus_platform
 COPY /go/src/ecovacs.com/corpus_platform/docker/entrypoint.sh entrypoint.sh
 COPY /go/src/ecovacs.com/corpus_platform/docker/env.template env.template
 
