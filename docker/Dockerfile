@@ -1,8 +1,6 @@
 FROM golang:1.13.4-alpine3.10
 
 ENV GOPROXY "https://goproxy.io"
-ENV GOPATH  "/go/src"
-ENV GOBIN   "/go/bin"
 
 COPY . /go/src/ecovacs.com/corpus_platform
 
