@@ -1,7 +1,7 @@
 version: '2.1'
 services:
   corpus-platform:
-    image: docker-reg.ecovacs.com/library/corpus-platform:20191126-ed0c233
+    image: docker-reg.ecovacs.com/library/corpus-platform:20191126-047bd41
     container_name: corpus-platform
     ports:
       - "8080:8080"
@@ -11,3 +11,7 @@ services:
         max-size: "5M"
         max-file: "10"
       driver: json-file
+    entrypoint:
+      - bash
+      - -c
+      - go run server.go
